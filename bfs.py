@@ -1,4 +1,3 @@
-#Genera las librerías que permiten crear colas de manera sencilla.
 from queue import Queue
 #Crea una función llamada gráfico.
 class Grafico:
@@ -62,7 +61,7 @@ class Grafico:
 if __name__ == "__main__":
    
     # Crea una instancia de gráficos identificando que no está dirigido.
-    g = Grafico(5, dirigido=False)
+    g = Grafico(8, dirigido=True)
     valor1=int(input("Ingrese un número: "))
     valor2=int(input("Ingrese un número: "))
     valor3=int(input("Ingrese un número: "))
@@ -73,11 +72,17 @@ if __name__ == "__main__":
     valor8=int(input("Ingrese un número: "))
     valor9=int(input("Ingrese un número: "))
     # Agrega cinco gráficos con sus respectivos pesos de border.
-    g.add_edge(valor1)
-    g.add_edge(valor1, valor4)
-    g.add_edge(valor2, valor5, valor6)
-    g.add_edge(valor5,valor3)
-    g.add_edge(valor3, valor7, valor8)
+    g.add_edge(valor1, valor2,valor5)
+    g.add_edge(valor1,valor3,valor6)
+    g.add_edge(valor2,valor5,valor1)
+    g.add_edge(valor3,valor5,valor7)
+    g.add_edge(valor5,valor1,valor8)
+    g.add_edge(valor5,valor3,valor1)
+    g.add_edge(valor3,valor4,valor5)
+    g.add_edge(valor4,valor7,valor1)
+    g.add_edge(valor7,valor8,valor4)
+    g.add_edge(valor8,valor3,valor2)
+    g.add_edge(valor3, valor7,valor8)
  
     # Imprime las listas adyacentes  con su respectivo nodo y peso del borde.
     g.print_adj_lista()
