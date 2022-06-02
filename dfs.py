@@ -64,8 +64,7 @@ if __name__ == "__main__":
     valor4=int(input("Ingrese un número: "))
     valor5=int(input("Ingrese un número: "))
     valor6=int(input("Ingrese un número: "))
-    valor7=int(input("Ingrese un número: "))
-    valor8=int(input("Ingrese un número: "))
+    
     # Agrega los atributos del gráficos con sus respectivos pesos de border.
     g.add_edge(valor0, valor1,valor1)   
     g.add_edge(valor0,valor2,valor2)
