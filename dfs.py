@@ -11,6 +11,7 @@ class Grafico:
         self.m_dirigido = dirigido
        
         #Se implementa una lista adyacente mediante un diccionario.
+    
         '''Para agregar un diccionario tenemos como parametro crear un objeto por lista agregando
         un bucle de recorrido que empieza de nodo=0 hasta el rango asignado'''
         self.m_adj_lista = {nodo: set() for nodo in self.m_nodos}      
