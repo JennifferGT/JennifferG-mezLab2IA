@@ -37,18 +37,31 @@ class Grafico:
         for llave in self.m_adj_lista.keys():
             #Imprime en orden el número de nodos ingresados con los datos almacenados en el diccionaro
             print("nodo", llave, ": ", self.m_adj_lista[llave])
-
-    def dfs(self, start, target, path = [], visited = set()):
-        path.append(start)
-        visited.add(start)
-        if start == target:
-            return path
-        for (neighbour, weight) in self.m_adj_list[start]:
-            if neighbour not in visited:
-                result = self.dfs(neighbour, target, path, visited)
+            '''Dentro del constructor de dfs se implementan 5 atributos,
+            la instancia, incio, objetivo, trayecto y visitado '''
+    #Dentro del constructor dfs 
+    def dfs(self, inicio, objetivo, trayecto = [], visitado = set()):
+        #En el trayecto adjunta los nodos de inicio
+        trayecto.append(inicio)
+        #En cada nodo de inicio visitado lo va agregando
+        visitado.add(inicio)
+        #Dentro de la condicion if pregunta si el nodo de inicio es igual al nodo de los  objetivos
+        if inicio == objetivo:
+            #Si son iguales termina el trayecto
+            return trayecto
+        '''Realiza  una sentencia de recorrido mediante los nodos vecinos y el peso de la aristas
+        hasta el primer número de listas adyacentes'''
+        for (vecino, weight) in self.m_adj_lista[inicio]:
+            #Cuando los vicinos aun no son visitados
+            if vecino not in visitado:
+                #Crea un atributo especificando los parametros, llamando al constructor
+                '''El constructor es el encargado de preguntar si fue visitado o no, permite adjuntar y agregarlo como nodo de inicio'''
+                result = self.dfs(vecino, objetivo, trayecto, visitado)
+                #Verfica si el resultado  es ninguno termina el trayecto
                 if result is not None:
                     return result
-        path.pop()
+        trayecto.pop()
+        #Terminado el recorrido
         return None
 
 
@@ -75,10 +88,11 @@ if __name__ == "__main__":
    
     # Imprime las listas adyacentes  con su respectivo nodo y peso del borde.
     g.print_adj_lista()
-
-    traversal_path = []
-    traversal_path = graph.dfs(0, 3)
-    print(f" The traversal path from node 0 to node 3 is {traversal_path}")
+    #Crea un atributo que almacena el recorrido de la ruta dentro de un diccionario
+    recorrido_ruta = []
+    #Agrega el nodo inicial y el nodo objetivo
+    recorrido_ruta = g.dfs(0, 3)
+    print(f" El camino recorrido del nodo 0 al nodo 3 es {recorrido_ruta}")
 
 
 
