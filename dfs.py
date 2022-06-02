@@ -68,37 +68,33 @@ class Grafico:
 if __name__ == "__main__":
    
     # Crea una instancia de gráficos identificando que no está dirigido.
-    g = Grafico(5, dirigido=False)
+    g = Grafico(7, dirigido=True)
     #Pide al usuario ingresar datos
-    valor0=int(input("Ingrese un número: "))
+    
     valor1=int(input("Ingrese un número: "))
     valor2=int(input("Ingrese un número: "))
     valor3=int(input("Ingrese un número: "))
     valor4=int(input("Ingrese un número: "))
     valor5=int(input("Ingrese un número: "))
     valor6=int(input("Ingrese un número: "))
+    valor7=int(input("Ingrese un número: "))
     
     # Agrega los atributos del gráficos con sus respectivos pesos de border.
-    g.add_edge(valor0, valor1,valor1)   
-    g.add_edge(valor0,valor2,valor2)
-    g.add_edge(valor2,valor1,valor4)
-    g.add_edge(valor1,valor4,valor6)
-    g.add_edge(valor4,valor3,valor5)
-    g.add_edge(valor3,valor2,valor3)
-   
+    g.add_edge(valor5, valor1)   
+    g.add_edge(valor5, valor4)
+    g.add_edge(valor2, valor5)
+    g.add_edge(valor4, valor2)
+    g.add_edge(valor4, valor3)
+    g.add_edge(valor3, valor6)
+    g.add_edge(valor6, valor5)
+    g.add_edge(valor5, valor7)
+    
+    
     # Imprime las listas adyacentes  con su respectivo nodo y peso del borde.
     g.print_adj_lista()
     #Crea un atributo que almacena el recorrido de la ruta dentro de un diccionario
     recorrido_ruta = []
     #Agrega el nodo inicial y el nodo objetivo
-    recorrido_ruta = g.dfs(0, 3)
-    print(f" El camino recorrido del nodo 0 al nodo 3 es {recorrido_ruta}")
+    recorrido_ruta = g.dfs(4,7)
+    print(f" El camino recorrido del nodo 1 al nodo 6 es {recorrido_ruta}")
 
-
-
-
-# Execution Steps
-# Current Node	Path	Visited
-# 0	[0]	{0}
-# 1	[0, 1]	{0, 1}
-# 3	[0, 1, 3]	{0, 1, 3}
