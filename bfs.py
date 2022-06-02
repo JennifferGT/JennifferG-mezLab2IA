@@ -70,8 +70,9 @@ class Grafico:
 if __name__ == "__main__":
    
     # Crea una instancia de gráficos identificando que no está dirigido.
-    g = Grafico(9, dirigido=True)
+    g = Grafico(5, dirigido=False)
     #Pide al usuario ingresar datos
+    valor0=int(input("Ingrese un número: "))
     valor1=int(input("Ingrese un número: "))
     valor2=int(input("Ingrese un número: "))
     valor3=int(input("Ingrese un número: "))
@@ -81,17 +82,14 @@ if __name__ == "__main__":
     valor7=int(input("Ingrese un número: "))
     valor8=int(input("Ingrese un número: "))
     # Agrega los atributos del gráficos con sus respectivos pesos de border.
-    g.add_edge(valor1, valor2,valor5)
-    g.add_edge(valor1,valor3,valor6)
-    g.add_edge(valor2,valor5,valor1)
-    g.add_edge(valor3,valor5,valor7)
-    g.add_edge(valor5,valor1,valor8)
-    g.add_edge(valor5,valor3,valor1)
-    g.add_edge(valor3,valor4,valor5)
-    g.add_edge(valor4,valor7,valor1)
-    g.add_edge(valor7,valor8,valor4)
-    g.add_edge(valor8,valor3,valor2)
-    g.add_edge(valor3, valor7,valor8)
+    g.add_edge(valor0, valor1,valor1)   
+    g.add_edge(valor0,valor2,valor2)
+    g.add_edge(valor2,valor1,valor4)
+    g.add_edge(valor1,valor4,valor6)
+    g.add_edge(valor4,valor3,valor5)
+    g.add_edge(valor3,valor2,valor3)
+   
+   
  
     # Imprime las listas adyacentes  con su respectivo nodo y peso del borde.
     g.print_adj_lista()
@@ -99,5 +97,5 @@ if __name__ == "__main__":
     print ("El siguiente es el primer recorrido de anchura"
                     " (A partir del vértice 0)")
     #Indica el número de búsqueda de anchura.
-    g.bfs_traversal(1)
+    g.bfs_traversal(0)
     print()
