@@ -70,7 +70,7 @@ class Grafico:
 if __name__ == "__main__":
    
     # Crea una instancia de gráficos identificando que no está dirigido.
-    g = Grafico(8, dirigido=True)
+    g = Grafico(9, dirigido=True)
     #Pide al usuario ingresar datos
     valor1=int(input("Ingrese un número: "))
     valor2=int(input("Ingrese un número: "))
@@ -99,5 +99,5 @@ if __name__ == "__main__":
     print ("El siguiente es el primer recorrido de anchura"
                     " (A partir del vértice 0)")
     #Indica el número de búsqueda de anchura.
-    g.bfs_traversal(0)
+    g.bfs_traversal(1)
     print()
