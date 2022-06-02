@@ -96,5 +96,5 @@ if __name__ == "__main__":
     recorrido_ruta = []
     #Agrega el nodo inicial y el nodo objetivo
     recorrido_ruta = g.dfs(4,7)
-    print(f" El camino recorrido del nodo 1 al nodo 6 es {recorrido_ruta}")
+    print(f" El camino recorrido del nodo 4 al nodo 7 es {recorrido_ruta}")
 
