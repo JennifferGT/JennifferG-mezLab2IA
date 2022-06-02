@@ -1,9 +1,9 @@
+"En el presente codigo permite obtener el recorrido y el orden de los nodos del grafo "
+
 from queue import Queue
 #Crea una función llamada gráfico.
 class Grafico:
-    
-
-    #Crea objetos inicializando los atributos.
+    #Crea objetos instanciando los atributos.
     def __init__(self, numero_de_nodos, dirigido=True):
         #Ingresa por medio de atributos el número de nodos.
         self.m_numero_de_nodos = numero_de_nodos
@@ -18,11 +18,11 @@ class Grafico:
    
     # Se agrega una función inicializando los nodos agregando un borde al gráfico.
     def add_edge(self, nodo1, nodo2, weight=1):
-        #Se agrega al nodo2 un borde, enlazado con el nodo1.
+        #Si el nodo1 es dirigido agrega un vertice del nodo1 al nodo2
         self.m_adj_lista[nodo1].add((nodo2, weight))
         # Cuando el nodo no está dirigido.
         if not self.m_dirigido:
-            #En el nodo 2 se agrega el nodo 1 con el borde del gráfico.
+            #Si el nodo2 no es dirigido agrega un vertice del nodo2 al nodo1
             self.m_adj_lista[nodo2].add((nodo1, weight))
    
     # Imprime la representación gráfica del atributo.
@@ -62,6 +62,7 @@ if __name__ == "__main__":
    
     # Crea una instancia de gráficos identificando que no está dirigido.
     g = Grafico(8, dirigido=True)
+    #Pide al usuario ingresar datos
     valor1=int(input("Ingrese un número: "))
     valor2=int(input("Ingrese un número: "))
     valor3=int(input("Ingrese un número: "))
